@@ -1,0 +1,42 @@
+- hosts : localhost
+  name: Install mac programs
+  become: false
+  vars:
+    brew_packages:
+      - git
+      - coreutils
+      - gnu-getopt
+      - gnu-indent
+      - gnu-sed
+      - gnu-tar
+      - gnu-typist
+      - gnupg
+      - gnutls
+      - gawk
+      - ffmpeg
+      - pyenv
+      - go
+      - rustup-init
+      - n
+      - bat
+      - cmake
+      - elixir
+      - exa
+      - neovim
+      - terraform
+      - tmux
+      - deno
+      - grep
+      - imagemagick
+      - ripgrep
+      - pure
+      - protobuf
+      - wget
+      - lua
+      - cmake
+      - tree-sitter
+  tasks: 
+    - name: Install packages
+      homebrew:
+        name: "{{ brew_packages }}"
+        state: present

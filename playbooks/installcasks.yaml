@@ -1,0 +1,17 @@
+- hosts : localhost
+  name: install casks macos
+  vars:
+    brew_casks:
+      - google-chrome
+      - gimp
+      - discord
+      - btt
+      - bitwarden
+      - docker
+      - firefox
+      - amethyst
+  tasks: 
+  - name: install casks
+    homebrew_cask:
+      name: "{{ brew_casks }}"
+      state: present
