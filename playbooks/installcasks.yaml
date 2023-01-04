@@ -10,6 +10,7 @@
       - docker
       - firefox
       - amethyst
+      - brave-browser
   tasks: 
   - name: install casks
     homebrew_cask:
