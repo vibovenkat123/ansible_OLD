@@ -1,0 +1,7 @@
+- hosts: localhost
+  name: Set up neovim
+  tasks:
+    - name: Get Packer.lua
+      git:
+        repo: 'https://github.com/wbthomason/packer.nvim'
+        dest: "{{ lookup('env', 'HOME') }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
