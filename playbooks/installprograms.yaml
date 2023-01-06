@@ -35,6 +35,7 @@
       - lua
       - cmake
       - tree-sitter
+      - stow
   tasks: 
     - name: Install packages
       homebrew:
