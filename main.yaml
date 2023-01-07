@@ -1,7 +1,16 @@
-- hosts : localhost
-  name: Install mac programs
-  become: false
+- hosts: localhost
+  name: main
   vars:
+    brew_casks:
+      - google-chrome
+      - gimp
+      - discord
+      - bitwarden
+      - bettertouchtool
+      - docker
+      - firefox
+      - amethyst
+      - brave-browser
     brew_packages:
       - git
       - coreutils
@@ -37,7 +46,10 @@
       - tree-sitter
       - stow
   tasks: 
-    - name: Install packages
-      homebrew:
-        name: "{{ brew_packages }}"
-        state: present
+  - include_tasks: "tasks/installhomebrew.yaml" 
+  - include: tasks/installprograms.yaml
+  - include: tasks/installcasks.yaml
+  - include: tasks/dotfiles.yaml
+  - include: tasks/zsh.yaml
+  - include: tasks/node.yaml
+  - include: tasks/neovim.yaml

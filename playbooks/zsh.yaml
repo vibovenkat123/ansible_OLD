@@ -1,7 +1,0 @@
-- hosts: localhost
-  name: zsh setup
-  tasks:
-    - name: install zsh autosuggestions
-      ansible.builtin.git:
-        repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
-        dest: "~/.zsh/zsh-autosuggestions"
