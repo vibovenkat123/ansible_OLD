@@ -1,10 +1,6 @@
 - hosts: localhost
   name: main
   vars:
-    source_discord_key: "./keys/discord/discord_backup_codes.txt"
-    dest_discord_key: "{{ lookup('env', 'HOME') }}/keys/discord/discord_backup_codes.txt"
-    source_key: "./keys/ssh/id_ed25519"
-    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
     brew_casks:
       - google-chrome
       - gimp
@@ -56,4 +52,3 @@
   - include_tasks: tasks/zsh.yaml
   - include_tasks: tasks/node.yaml
   - include_tasks: tasks/neovim.yaml
-  - include_tasks: tasks/discord.yaml
