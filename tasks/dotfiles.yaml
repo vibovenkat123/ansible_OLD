@@ -1,10 +1,20 @@
 - name: clone dotfiles repo
-  git:
+  ansible.builtin.git:
     repo: 'git@github.com:vibovenkat123/.dotfiles.git'
     dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
     recursive: yes
     version: rolling
     update: yes
     accept_hostkey: yes
+  tags:
+    - dotfiles
+    - neovim
+    - zsh
+    - tmux
 - name: Stow files
-  shell: cd $HOME/.dotfiles && ./setup 2>&1 | grep -v "BUG in find_stowed_path" 
+  ansible.builtin.shell: cd $HOME/.dotfiles && ./setup 2>&1 | grep -v "BUG in find_stowed_path" 
+  tags:
+    - neovim
+    - zsh
+    - tmux
+    - dotfiles

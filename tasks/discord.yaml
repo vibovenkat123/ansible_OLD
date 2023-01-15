@@ -1,0 +1,14 @@
+- name: Ensure discord dir exists
+  ansible.builtin.file:
+    path: "{{ dest_discord_key }}"
+    state: directory
+    recurse: yes
+- name: Copy Discord codes to directory
+  become_user: root
+  ansible.builtin.copy: 
+    src: "{{ source_discord_key }}"
+    dest: "{{ dest_discord_key }}"
+    mode: '0600'
+  tags:
+    - discord
+    - keys

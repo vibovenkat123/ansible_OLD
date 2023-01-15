@@ -1,3 +1,7 @@
 - name: install node with n
-  shell: n latest
+  ansible.builtin.shell: n latest
   become: yes
+  tags: 
+    - node
+    - install
+    - tools

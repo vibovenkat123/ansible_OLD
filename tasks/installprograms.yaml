@@ -1,4 +1,8 @@
 - name: Install packages
-  homebrew:
+  community.general.homebrew:
     name: "{{ brew_packages }}"
     state: present
+  tags:
+    - homebrew
+    - install
+    - tools

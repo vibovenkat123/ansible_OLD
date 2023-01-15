@@ -2,3 +2,6 @@
   ansible.builtin.git:
     repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
     dest: "~/.zsh/zsh-autosuggestions"
+  tags:
+    - zsh
+    - install

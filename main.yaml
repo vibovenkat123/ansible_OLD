@@ -1,6 +1,10 @@
 - hosts: localhost
   name: main
   vars:
+    source_discord_key: "./keys/discord/discord_backup_codes.txt"
+    dest_discord_key: "{{ lookup('env', 'HOME') }}/keys/discord/discord_backup_codes.txt"
+    source_key: "./keys/ssh/id_ed25519"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
     brew_casks:
       - google-chrome
       - gimp
@@ -46,9 +50,10 @@
       - stow
   tasks: 
   - include_tasks: "tasks/installhomebrew.yaml" 
-  - include: tasks/installprograms.yaml
-  - include: tasks/installcasks.yaml
-  - include: tasks/dotfiles.yaml
-  - include: tasks/zsh.yaml
-  - include: tasks/node.yaml
-  - include: tasks/neovim.yaml
+  - include_tasks : tasks/installprograms.yaml
+  - include_tasks: tasks/installcasks.yaml
+  - include_tasks: tasks/dotfiles.yaml
+  - include_tasks: tasks/zsh.yaml
+  - include_tasks: tasks/node.yaml
+  - include_tasks: tasks/neovim.yaml
+  - include_tasks: tasks/discord.yaml

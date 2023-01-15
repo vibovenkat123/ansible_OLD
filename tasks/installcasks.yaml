@@ -1,4 +1,8 @@
 - name: install casks
-  homebrew_cask:
+  community.general.homebrew_cask:
     name: "{{ brew_casks }}"
     state: present
+  tags:
+    - homebrew
+    - install
+    - apps
