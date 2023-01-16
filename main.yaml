@@ -1,6 +1,10 @@
 - hosts: localhost
   name: main
   vars:
+    source_key: "./keys/id_ed25519"
+    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
+    source_pub_key: "./keys/id_ed25519.pub"
+    dest_pub_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519.pub"
     brew_casks:
       - google-chrome
       - gimp
