@@ -49,9 +49,10 @@
       - tree-sitter
       - stow
   tasks: 
-  - include_tasks: "tasks/installhomebrew.yaml" 
+  - include_tasks: tasks/installhomebrew.yaml 
   - include_tasks : tasks/installprograms.yaml
   - include_tasks: tasks/installcasks.yaml
+  - include_tasks: tasks/ssh.yaml
   - include_tasks: tasks/dotfiles.yaml
   - include_tasks: tasks/zsh.yaml
   - include_tasks: tasks/node.yaml
