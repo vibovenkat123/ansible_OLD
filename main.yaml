@@ -48,6 +48,7 @@
       - cmake
       - tree-sitter
       - stow
+      - romkatv/powerlevel10k/powerlevel10k
   tasks: 
   - include_tasks: tasks/installhomebrew.yaml 
   - include_tasks : tasks/installprograms.yaml
