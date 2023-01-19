@@ -16,6 +16,7 @@
       - brave-browser
     brew_packages:
       - git
+      - fish
       - coreutils
       - gnu-getopt
       - gnu-indent
