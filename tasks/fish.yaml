@@ -5,3 +5,6 @@
   shell: chsh -s $(which fish)
   become: yes
   become_user: "{{ lookup('env', 'USER') }}"
+- name: install oh-my-fish
+  shell: curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+
