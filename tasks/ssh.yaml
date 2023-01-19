@@ -29,7 +29,7 @@
   authorized_key:
     user: "{{ lookup('env', 'USER') }}"
     state: present
-    key: "{{ lookup('file', '~/.ssh/id_ed25519.pub' }}"
+    key: "{{ lookup('file', '~/.ssh/id_ed25519.pub') }}"
   tags:
     - dotfiles
     - ssh
