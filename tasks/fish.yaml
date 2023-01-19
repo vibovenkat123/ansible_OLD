@@ -1,0 +1,7 @@
+- name: set up fish
+  shell: echo $(which fish) | sudo tee -a /etc/shells
+  become: yes
+- name: set up default shell
+  shell: chsh -s $(which fish)
+  become: yes
+  become_user: "{{ lookup('env', 'USER') }}"
