@@ -1,5 +1,0 @@
-- name: install p10k
-  ansible.builtin.shell: echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
-  tags: 
-    - install
-    - tools

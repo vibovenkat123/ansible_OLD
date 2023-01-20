@@ -16,7 +16,6 @@
       - brave-browser
     brew_packages:
       - git
-      - fish
       - coreutils
       - gnu-getopt
       - gnu-indent
@@ -49,7 +48,6 @@
       - cmake
       - tree-sitter
       - stow
-      - romkatv/powerlevel10k/powerlevel10k
   tasks: 
   - include_tasks: tasks/installhomebrew.yaml 
   - include_tasks : tasks/installprograms.yaml
@@ -59,4 +57,3 @@
   - include_tasks: tasks/zsh.yaml
   - include_tasks: tasks/node.yaml
   - include_tasks: tasks/neovim.yaml
-  - include_tasks: tasks/fish.yaml
