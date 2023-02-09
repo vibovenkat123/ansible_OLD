@@ -16,6 +16,7 @@
       - brave-browser
     brew_packages:
       - git
+      - delve
       - coreutils
       - gnu-getopt
       - gnu-indent
@@ -56,4 +57,3 @@
   - include_tasks: tasks/dotfiles.yaml
   - include_tasks: tasks/zsh.yaml
   - include_tasks: tasks/node.yaml
-  - include_tasks: tasks/neovim.yaml
