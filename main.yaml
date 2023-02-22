@@ -18,6 +18,7 @@
       - coteditor
       - keka
     brew_packages:
+      - tree
       - git
       - delve
       - coreutils
