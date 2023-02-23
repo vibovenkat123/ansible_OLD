@@ -6,7 +6,7 @@
     source_pub_key: "./keys/id_ed25519.pub"
     dest_pub_key: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519.pub"
     brew_casks:
-      - raycast
+      - menubarx
       - google-chrome
       - gimp
       - discord
@@ -19,6 +19,7 @@
       - keka
       - shottr
       - hiddenbar
+      - nightowl
     brew_packages:
       - tree
       - git
