@@ -17,6 +17,7 @@
       - brave-browser
       - coteditor
       - keka
+      - shottr
     brew_packages:
       - tree
       - git
