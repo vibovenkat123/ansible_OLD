@@ -14,12 +14,11 @@
       - docker
       - firefox
       - rectangle
-      - brave-browser
-      - coteditor
       - keka
       - shottr
       - hiddenbar
-      - nightowl
+      - numi
+      - maccy
     brew_packages:
       - tree
       - git
