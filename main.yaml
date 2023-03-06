@@ -21,6 +21,9 @@
       - maccy
     brew_packages:
       - jq
+      - neofetch
+      - gotop
+      - ranger
       - tree
       - git
       - delve
