@@ -23,7 +23,6 @@
       - jq
       - neofetch
       - gotop
-      - ranger
       - tree
       - git
       - delve
