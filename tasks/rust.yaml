@@ -1,0 +1,12 @@
+- name: Install analyzer
+  ansible.builtin.shell: rustup component add rust-analyzer
+  tags:
+    - rust
+    - install
+    - tools
+- name: Install bacon
+  community.general.cargo:
+    name: bacon
+- name: install yadbmt
+  community.general.cargo:
+    name: yadbmt
