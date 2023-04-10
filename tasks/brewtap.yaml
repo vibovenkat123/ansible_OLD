@@ -1,0 +1,9 @@
+- name: Tap formulae and casks
+  community.general.homebrew_tap:
+    name: "{{ brew_tap }}"
+    state: present
+  tags:
+    - homebrew
+    - install
+    - tools
+    - tap

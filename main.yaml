@@ -18,6 +18,9 @@
       - numi
       - maccy
     brew_packages:
+      - curl
+      - awscli
+      - sketchybar
       - jq
       - neofetch
       - gotop
@@ -56,8 +59,11 @@
       - cmake
       - tree-sitter
       - stow
-  tasks: 
-  - include_tasks: tasks/installhomebrew.yaml 
+    brew_tap:
+      - FelixKratz/formulae
+  tasks:
+  - include_tasks: tasks/brewtap.yaml
+  - include_tasks: tasks/installhomebrew.yaml
   - include_tasks : tasks/installprograms.yaml
   - include_tasks: tasks/installcasks.yaml
   - include_tasks: tasks/ssh.yaml
