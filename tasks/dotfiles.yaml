@@ -3,7 +3,7 @@
     repo: 'git@github.com:vibovenkat123/.dotfiles.git'
     dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
     recursive: yes
-    version: rolling
+    version: main
     update: yes
     accept_hostkey: yes
   tags:
@@ -11,10 +11,24 @@
     - neovim
     - zsh
     - tmux
-- name: Stow files
-  ansible.builtin.shell: cd $HOME/.dotfiles && ./setup 2>&1 | grep -v "BUG in find_stowed_path" 
+- name: link files
+  ansible.builtin.shell: cd $HOME/.dotfiles && ./dotfiles_setup
   tags:
     - neovim
     - zsh
     - tmux
     - dotfiles
+- name: remove the directory
+  ansible.builtin.file:
+    path: "{{ lookup('env', 'HOME') }}/.dotfiles"
+    state: absent
+- name: readd it but make it bare
+- name: clone dotfiles repo
+  ansible.builtin.git:
+    repo: 'git@github.com:vibovenkat123/.dotfiles.git'
+    dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
+    recursive: yes
+    version: main
+    update: yes
+    bare: true
+    accept_hostkey: yes
