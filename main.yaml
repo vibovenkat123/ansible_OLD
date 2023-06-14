@@ -13,17 +13,16 @@
       - docker
       - firefox
       - rectangle
-      - shottr
       - hiddenbar
       - numi
       - maccy
     brew_packages:
+      - nasm
+      - cocoapods
       - curl
       - awscli
-      - sketchybar
       - jq
       - neofetch
-      - gotop
       - tree
       - redis
       - ruby
@@ -48,21 +47,17 @@
       - bat
       - cmake
       - elixir
-      - exa
       - neovim
       - terraform
       - tmux
-      - deno
       - grep
       - imagemagick
       - ripgrep
-      - pure
       - protobuf
       - wget
       - lua
       - cmake
       - tree-sitter
-      - stow
     brew_tap:
       - FelixKratz/formulae
   tasks:

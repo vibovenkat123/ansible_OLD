@@ -1,27 +1,3 @@
-- name: clone dotfiles repo
-  ansible.builtin.git:
-    repo: 'git@github.com:vibovenkat123/.dotfiles.git'
-    dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
-    recursive: yes
-    version: main
-    update: yes
-    accept_hostkey: yes
-  tags:
-    - dotfiles
-    - neovim
-    - zsh
-    - tmux
-- name: link files
-  ansible.builtin.shell: cd $HOME/.dotfiles && ./dotfiles_setup
-  tags:
-    - neovim
-    - zsh
-    - tmux
-    - dotfiles
-- name: remove the directory
-  ansible.builtin.file:
-    path: "{{ lookup('env', 'HOME') }}/.dotfiles"
-    state: absent
 - name: readd it but make it bare
   ansible.builtin.git:
     repo: 'git@github.com:vibovenkat123/.dotfiles.git'
@@ -36,9 +12,8 @@
     - neovim
     - zsh
     - tmux
-- name: add tpm
-  ansible.builtin.shell: git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-  tags:
-    - tmux
-    - dotfiles
 
+- name: checkout
+  ansible.builtin.shell:
+    cmd: git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" checkout
+    executable: /bin/zsh
