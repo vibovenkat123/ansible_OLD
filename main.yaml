@@ -8,14 +8,15 @@
     brew_casks:
       - google-chrome
       - gimp
-      - discord
-      - bitwarden
       - docker
       - firefox
       - rectangle
       - hiddenbar
-      - numi
       - maccy
+      - visual-studio-code
+      - figma
+      - jetbrains-toolbox
+      - sf-symbols
     brew_packages:
       - nasm
       - cocoapods
